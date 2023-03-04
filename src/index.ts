@@ -18,7 +18,7 @@ export default {
 		const update: Telegram.Update = await request.json()
 
 		// grab chat ID from update
-		const chatID = update.message?.chat.id || update.my_chat_member?.chat.id
+		const chatID = update.message?.chat.id
 		if (chatID === undefined) {
 			return new Response(null, {
 				status: 400,

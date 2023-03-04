@@ -1,7 +1,6 @@
 export namespace Telegram {
     export interface Update {
         message?: Action
-        my_chat_member?: Action
     }
     export interface Action {
         chat: Chat
