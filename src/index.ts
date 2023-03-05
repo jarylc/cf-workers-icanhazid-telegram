@@ -16,7 +16,6 @@ export default {
 		}
 
 		const update: Telegram.Update = await request.json()
-		console.log(update)
 
 		// grab chat ID from update
 		const chatID = update.message?.chat?.id || update.inline_query?.from.id

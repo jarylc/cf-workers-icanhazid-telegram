@@ -6,9 +6,9 @@
 
 Inspired by https://icanhazip.com/ (which is also [hosted on Cloudflare Workers](https://major.io/2021/06/06/a-new-future-for-icanhazip/)), this bot simply replies the current chat's ID for info when started or invited to the chat.
 
-You can get your own user ID by just typing `@icanhazidbot` and a space in any chat, then tapping your ID to print it out in the active chat. Alternatively, you can talk to the bot directly.
+You can get your own user ID by just tagging `@icanhazidbot` in any chat, if required, you can tap on the ID to send it in the active chat. Alternatively, you can talk to the bot directly.
 
-If you need the ID of a group chat, you should invite the bot @ http://t.me/icanhazidbot to the group and it would immediately print out the ID in the group chat.
+If you need the ID of a group chat, you should invite the bot @ http://t.me/icanhazidbot to the group, and it would immediately print out the ID in the group chat.
 
 ## Commands
 ```
