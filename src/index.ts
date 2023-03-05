@@ -16,16 +16,22 @@ export default {
 		}
 
 		const update: Telegram.Update = await request.json()
+		console.log(update)
 
 		// grab chat ID from update
-		const chatID = update.message?.chat.id
+		const chatID = update.message?.chat?.id || update.inline_query?.from.id
 		if (chatID === undefined) {
 			return new Response(null, {
 				status: 400,
 			})
 		}
 
-		// reply ID in Telegram
-		return Telegram.generateSendMessageResponse(chatID, "`"+chatID+"`")
+		// for inline_query, just respond with an inline query answer
+		const response = "`" + chatID + "`"
+		if (update.inline_query) {
+			return Telegram.generateAnswerInlineQueryResponse(update.inline_query?.id, chatID, response)
+		} else {
+			return Telegram.generateSendMessageResponse(chatID, response)
+		}
 	},
 }
