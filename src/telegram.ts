@@ -6,10 +6,14 @@ export namespace Telegram {
     export interface Action {
         id: string,
         from: Chat
-        chat?: Chat
+        chat: Chat
+        sticker?: Sticker
     }
     export interface Chat {
         id: number
+    }
+    export interface Sticker {
+        file_id: string
     }
 
     export function generateAnswerInlineQueryResponse(inlineQueryID: string, chatID: number, text: string): Response {

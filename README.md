@@ -10,6 +10,8 @@ You can get your own user ID by just tagging `@icanhazidbot` in any chat, if req
 
 If you need the ID of a group chat, you should invite the bot @ http://t.me/icanhazidbot to the group, and it would immediately print out the ID in the group chat.
 
+If you need the file ID of a sticker, you can also send it to the bot to get it.
+
 ## Commands
 ```
 id - Get the bot to respond with the ID of the current chat

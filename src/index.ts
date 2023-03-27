@@ -17,7 +17,7 @@ export default {
 
 		const update: Telegram.Update = await request.json()
 
-		// grab chat ID from update
+		// grab chat ID
 		const chatID = update.message?.chat?.id || update.inline_query?.from.id
 		if (chatID === undefined) {
 			return new Response(null, {
@@ -25,8 +25,14 @@ export default {
 			})
 		}
 
+		// handle sticker
+		const stickerID = update.message?.sticker?.file_id
+
+		// sticker ID if it is a sticker, else return chatID
+		const id = stickerID || chatID
+
 		// for inline_query, just respond with an inline query answer
-		const response = "`" + chatID + "`"
+		const response = "`" + id + "`"
 		if (update.inline_query) {
 			return Telegram.generateAnswerInlineQueryResponse(update.inline_query?.id, chatID, response)
 		} else {
